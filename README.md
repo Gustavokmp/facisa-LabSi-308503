@@ -16,3 +16,8 @@ npm install
 
 Roda aplicação
 ng serve
+
+Testa
+login: aluno senha :aluno 
+login:professor senha:professor
+para cada um ira para uma tela pesonalizada para o uso de cada um.
