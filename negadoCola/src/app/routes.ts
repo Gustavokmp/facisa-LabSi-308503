@@ -1,3 +1,5 @@
+import { RealizarProvaComponent } from './realizar-prova/realizar-prova.component';
+import { HistoricoAlunoComponent } from './historico-aluno/historico-aluno.component';
 import { GeraProvaComponent } from './gera-prova/gera-prova.component';
 import { HistoricoProfessorComponent } from './historico-professor/historico-professor.component';
 import { CadastraTurmaComponent } from './cadastra-turma/cadastra-turma.component';
@@ -17,5 +19,7 @@ export const appRoutes : Routes = [
     { path: 'cadastraTurma', component: CadastraTurmaComponent },
     { path: 'historicoProfessor', component: HistoricoProfessorComponent },
     { path: 'geraProva', component: GeraProvaComponent },
+    {path: 'historicoAluno', component:HistoricoAlunoComponent},
+    {path: 'realizarProva', component:RealizarProvaComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
