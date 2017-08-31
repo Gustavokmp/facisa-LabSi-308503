@@ -9,7 +9,7 @@ Depois clone do repositorio
 git clone https://github.com/Gustavokmp/facisa-LabSi-308503.git
 
 Entra no repositorio
-cd facisa-LabSi-308503.git
+cd facisa-LabSi-308503
 
 Instalar dependencias
 npm install
