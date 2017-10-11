@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+
+import { DisciplinaProvider } from './../providers/disciplina/disciplina';
+import { CadastrarNotasPage } from './../pages/cadastrar-notas/cadastrar-notas';
+
+
 import { CriarProvaPage } from './../pages/criar-prova/criar-prova';
 import { RegistroProvider } from './../providers/registro/registro';
 import { AlunoLogadoPage } from './../pages/aluno-logado/aluno-logado';
@@ -6,13 +10,6 @@ import { ProfessorLogadoPage } from './../pages/professor-logado/professor-logad
 import { RegistrarPage } from './../pages/registrar/registrar';
 import { LoginPage } from './../pages/login/login';
 
-=======
-import { ListaDisciplinaPage } from './../pages/lista-disciplina/lista-disciplina';
-import { CadastroDisciplinaPage } from './../pages/cadastro-disciplina/cadastro-disciplina';
-import { HomePage } from './../pages/home/home';
-import { CadastroPage } from './../pages/cadastro/cadastro';
-import { LoginPage } from './../pages/login/login';
->>>>>>> 69ee9a9eaceac1d5c28ac82caed783eb007a09d4
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -24,7 +21,6 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 
 
 import { MyApp } from './app.component';
-<<<<<<< HEAD
 
 
 const firebaseConfig = {
@@ -35,38 +31,17 @@ const firebaseConfig = {
   storageBucket: "negadocola.appspot.com",
   messagingSenderId: "61196324193"
 };
-=======
-import { DisciplinaServiceProvider } from '../providers/disciplina-service/disciplina-service';
-
-export const firebaseConfig = {
-  apiKey: "AIzaSyDCw7ovenSUXFZLhoZuXemBtpl2Ap32VQ4",
-  authDomain: "teste-e0fb7.firebaseapp.com",
-  databaseURL: "https://teste-e0fb7.firebaseio.com",
-  projectId: "teste-e0fb7",
-  storageBucket: "teste-e0fb7.appspot.com",
-  messagingSenderId: "951221376667"
-}
-
->>>>>>> 69ee9a9eaceac1d5c28ac82caed783eb007a09d4
 
 @NgModule({
   declarations: [
     MyApp,
-<<<<<<< HEAD
     LoginPage,
     RegistrarPage,
     ProfessorLogadoPage,
     AlunoLogadoPage,
-    CriarProvaPage
-    
-=======
-    CadastroPage,
-    LoginPage,
-    HomePage,
-    CadastroDisciplinaPage,
-    ListaDisciplinaPage
->>>>>>> 69ee9a9eaceac1d5c28ac82caed783eb007a09d4
-    
+    CriarProvaPage,
+    CadastrarNotasPage,
+   
   ],
   imports: [
     BrowserModule,
@@ -80,30 +55,22 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-<<<<<<< HEAD
     LoginPage,
     RegistrarPage,
     ProfessorLogadoPage,
     AlunoLogadoPage,
-    CriarProvaPage
+    CriarProvaPage,
+    CadastrarNotasPage,
     
-=======
-    CadastroPage,
-    LoginPage,
-    HomePage,
-    CadastroDisciplinaPage,
-    ListaDisciplinaPage
->>>>>>> 69ee9a9eaceac1d5c28ac82caed783eb007a09d4
+    
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-<<<<<<< HEAD
-    RegistroProvider
-=======
-    DisciplinaServiceProvider
->>>>>>> 69ee9a9eaceac1d5c28ac82caed783eb007a09d4
+    RegistroProvider,
+    DisciplinaProvider
   ]
 })
 export class AppModule {}

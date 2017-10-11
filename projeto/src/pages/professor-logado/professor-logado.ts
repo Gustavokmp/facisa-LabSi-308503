@@ -1,3 +1,6 @@
+
+import { CadastrarNotasPage } from './../cadastrar-notas/cadastrar-notas';
+
 import { CriarProvaPage } from './../criar-prova/criar-prova';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -25,6 +28,12 @@ export class ProfessorLogadoPage {
 
   goCriarProva(){
     this.navCtrl.push(CriarProvaPage);
+  }
+  goCadastrarNota(){
+    this.navCtrl.push(CadastrarNotasPage);
+  }
+  goVerHistorico(){
+    console.log("Em Construção")
   }
 
 }

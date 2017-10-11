@@ -1,3 +1,4 @@
+
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Usuario } from './../../models/usuario';
 import { Injectable } from '@angular/core';
@@ -19,11 +20,12 @@ export class RegistroProvider {
 }
 
   async registrarSe(usuario: Usuario){
-  try{
+    try{
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(usuario.email , usuario.senha);
       console.log(result);
       }catch(e){
       console.error(e);
       }
-  }
+    }
+  
 }

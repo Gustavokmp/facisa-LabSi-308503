@@ -1,6 +1,4 @@
 import { Questao } from './questao';
-
-import { Prova } from './prova';
 import { Professor } from './professor';
 import { Aluno } from './aluno';
 export class Disciplina{
@@ -8,6 +6,7 @@ export class Disciplina{
     nome: string;
     aluno: Aluno;
     professor:Professor;
-    prova:Prova;
+    nota1: string;
+    nota2: string;
     questao: Questao;
 }

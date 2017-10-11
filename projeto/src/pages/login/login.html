@@ -1,15 +1,14 @@
-<<<<<<< HEAD
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
+    <ion-card-header color="black">
       Login
     </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
+    <ion-card-content >
+      <ion-grid >
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label floating>
+              <ion-label floating color="primary">
                 Email
               </ion-label>
               <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
@@ -20,7 +19,7 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label floating>
+              <ion-label floating color="primary">
                 Senha
               </ion-label>
               <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
@@ -30,7 +29,7 @@
 
         <ion-row>
             <ion-col>
-              <button ion-button  color="primary" (click)="logarProfessor(usuario)" >
+              <button ion-button round full color="primary" (click)="logarProfessor(usuario)" >
                 Login Professor
               </button>
             </ion-col>
@@ -38,7 +37,7 @@
 
         <ion-row>
             <ion-col>
-              <button ion-button  color="primary" (click)="logarAluno(usuario)">
+              <button ion-button round full color="primary" (click)="logarAluno(usuario)">
                 Login Aluno
               </button>
             </ion-col>
@@ -54,35 +53,3 @@
   </ion-card>
 
 </ion-content>
-=======
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar color="secondary">
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content>
-  <ion-item>
-    <ion-label floating>Endereço de email</ion-label>
-    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
-  <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
-
-  <button ion-button color="secondary" round (click)="logar(user)">Login</button>
-  <button ion-button color="secondary" round (click)="cadastro()">Cadastro</button>
-  
-
-</ion-content>
->>>>>>> 69ee9a9eaceac1d5c28ac82caed783eb007a09d4

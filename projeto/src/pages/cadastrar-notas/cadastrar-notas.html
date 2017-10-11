@@ -7,7 +7,7 @@
 <ion-header>
     
       <ion-navbar>
-        <ion-title>Criar Prova</ion-title>
+        <ion-title>Inserção de Notas</ion-title>
       </ion-navbar>
     
     </ion-header>
@@ -20,14 +20,18 @@
             <ion-input type="text" requerid [(ngModel)]="disciplina.nome"></ion-input>
          </ion-item>
          
-         <ion-item>
-            <ion-label floating>Questao</ion-label>
-            <ion-input type="text" requerid [(ngModel)]="disciplina.questao"></ion-input>
-         </ion-item>
          
          <ion-item>
             <ion-label floating>Nome do Aluno</ion-label>
             <ion-input type="text" requerid [(ngModel)]="disciplina.aluno"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label floating>Nota (Estágio 1)</ion-label>
+            <ion-input type="number" requerid [(ngModel)]="disciplina.nota1"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label floating>Nota (Estágio 2)</ion-label>
+            <ion-input type="number" requerid [(ngModel)]="disciplina.nota2"></ion-input>
          </ion-item>
          
        
