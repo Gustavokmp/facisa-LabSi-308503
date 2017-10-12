@@ -1,0 +1,40 @@
+<!--
+  Generated template for the CriarProvaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Criar Prova</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+      <ion-list>
+         <ion-item>
+            <ion-label floating>Nome da Disciplina</ion-label>
+            <ion-input type="text" requerid [(ngModel)]="disciplina.nome"></ion-input>
+         </ion-item>
+         
+         <ion-item>
+            <ion-label floating>Questao</ion-label>
+            <ion-input type="text" requerid [(ngModel)]="disciplina.questao"></ion-input>
+         </ion-item>
+         
+         <ion-item>
+            <ion-label floating>Nome do Aluno</ion-label>
+            <ion-input type="text" requerid [(ngModel)]="disciplina.aluno"></ion-input>
+         </ion-item>
+         
+       
+      </ion-list>
+      <div padding>
+          <button ion-button color="primary" (click)="salvar()">Cadastrar</button>
+          
+      </div>
+    
+    </ion-content>

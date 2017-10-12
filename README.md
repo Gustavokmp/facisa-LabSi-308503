@@ -1,5 +1,7 @@
 # facisa-LabSi-308503
 Repositório para o projeto de laboratório de sistemas de informação 
+<<<<<<< HEAD
+=======
 
 Necessario o angular cli
 
@@ -21,3 +23,4 @@ Testa
 login: aluno senha :aluno 
 login:professor senha:professor
 para cada um ira para uma tela pesonalizada para o uso de cada um.
+>>>>>>> 680df5985acd713f588fcfe14e6560f87b297b44
