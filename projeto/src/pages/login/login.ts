@@ -24,7 +24,8 @@ import { Usuario } from './../../models/usuario';
 export class LoginPage {
 
   usuario = {} as Usuario;
-  constructor(private afAuth: AngularFireAuth, 
+  tipo:string = "aluno";
+  constructor(private afAuth: AngularFireAuth,
     public navCtrl: NavController, public navParams: NavParams) {
       this.usuario.email = "gustavo@gmail.com";
       this.usuario.senha = "gustavo"
