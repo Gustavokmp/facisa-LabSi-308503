@@ -1,10 +1,12 @@
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { AlunoLogadoPage } from './../aluno-logado/aluno-logado';
+import { AngularFireAuth } from "angularfire2/auth";
+import { Component } from '@angular/core';
 import { ProfessorLogadoPage } from './../professor-logado/professor-logado';
 import { RegistrarPage } from './../registrar/registrar';
 import { Usuario } from './../../models/usuario';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireAuth } from "angularfire2/auth";
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -24,7 +26,8 @@ export class LoginPage {
   usuario = {} as Usuario;
   constructor(private afAuth: AngularFireAuth, 
     public navCtrl: NavController, public navParams: NavParams) {
-
+      this.usuario.email = "gustavo@gmail.com";
+      this.usuario.senha = "gustavo"
   }
 
   goRegistrar(){

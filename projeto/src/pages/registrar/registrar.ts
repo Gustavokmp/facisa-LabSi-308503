@@ -1,9 +1,9 @@
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { Component } from '@angular/core';
 import { LoginPage } from './../login/login';
 import { RegistroProvider } from './../../providers/registro/registro';
-
 import { Usuario } from './../../models/usuario';
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the RegistrarPage page.
@@ -19,6 +19,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistrarPage {
     usuario: Usuario;
+    tipo:string;
   
     constructor(public navCtrl: NavController,
                 public registroProvider: RegistroProvider ) {
@@ -26,7 +27,7 @@ export class RegistrarPage {
     }
   
     registrar(){
-      this.registroProvider.registrarSe(this.usuario);
+      this.registroProvider.registrarSe(this.usuario,this.tipo);
       this.navCtrl.push(LoginPage);
     }
   

@@ -1,9 +1,10 @@
+import { IonicPage, NavController } from 'ionic-angular';
 
-import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
-import { Disciplina } from './../../models/disciplina';
-import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { Disciplina } from './../../models/disciplina';
+import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the CriarProvaPage page.
@@ -18,8 +19,7 @@ import { IonicPage, NavController} from 'ionic-angular';
   templateUrl: 'criar-prova.html',
 })
 export class CriarProvaPage {
-  items: FirebaseListObservable<any[]>;
-  
+  items:  Observable<any[]>;
   disciplina = {} as Disciplina;
   constructor(public navCtrl: NavController, public db:AngularFireDatabase,
               private disciplinaProvider: DisciplinaProvider) {
@@ -29,22 +29,13 @@ export class CriarProvaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CriarProvaPage');
   }
-  salvar(disciplina){
-    if(this.disciplina.nome){
-      return this.items.update(this.disciplina.nome,{disciplina:this.disciplina})
-    }else{
-      this.items.push(this.disciplina);
-    }
-    
+  lista(){
+  this.items.forEach(item => {
+    console.log(item);
+  });
   }
-  editar(){
-    if(this.disciplina.keyReference){
-      return this.items.update(this.disciplina.keyReference,{disciplina:this.disciplina});
-    }else{
-      return console.log("Não Encontrado!!");
-      
-    }
-    
+  create(){
+    this.disciplinaProvider.create(this.disciplina);
   }
 
 }

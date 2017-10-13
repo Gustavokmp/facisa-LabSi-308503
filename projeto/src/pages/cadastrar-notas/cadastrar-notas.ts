@@ -1,9 +1,9 @@
-
-import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
-import { Disciplina } from './../../models/disciplina';
-import { FirebaseListObservable } from 'angularfire2/database';
-import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+
+import { Component } from '@angular/core';
+import { Disciplina } from './../../models/disciplina';
+import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
+import {FirebaseListObservable} from 'angularfire2';
 
 /**
  * Generated class for the CadastrarNotasPage page.

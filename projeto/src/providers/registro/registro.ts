@@ -1,9 +1,8 @@
+import 'rxjs/add/operator/map';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Usuario } from './../../models/usuario';
 import { Injectable } from '@angular/core';
-
-import 'rxjs/add/operator/map';
+import { Usuario } from './../../models/usuario';
 
 /*
   Generated class for the RegistroProvider provider.
@@ -19,7 +18,7 @@ export class RegistroProvider {
     console.log('Hello LoginProvider Provider');
 }
 
-  async registrarSe(usuario: Usuario){
+  async registrarSe(usuario: Usuario,tipo: string){
     try{
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(usuario.email , usuario.senha);
       console.log(result);

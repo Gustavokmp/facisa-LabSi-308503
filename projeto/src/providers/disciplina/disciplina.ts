@@ -1,10 +1,12 @@
+import 'rxjs/add/operator/map';
+
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { Disciplina } from './../../models/disciplina';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { RegistroProvider } from './../registro/registro';
 import { Injectable } from '@angular/core';
-
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+import { RegistroProvider } from './../registro/registro';
+import { Subject } from 'rxjs/Subject';
 
 /*
   Generated class for the DisciplinaProvider provider.
@@ -14,23 +16,33 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class DisciplinaProvider {
-  items: FirebaseListObservable<any[]>;
-  disciplina: Disciplina;
-  constructor(
-              public registroProvider:RegistroProvider,
-              public db: AngularFireDatabase,
-            ) {
-               {
-                var path = '/disciplina/';
-                this.items = db.list(path);
-              };
-    
+
+  disciplinas: FirebaseListObservable<any[]>;
+  constructor(public registroProvider: RegistroProvider, public db: AngularFireDatabase, ) {
+
+    var path = '/disciplinas';
+    this.disciplinas = this.db.list(path);
+
+
   }
-  getAll(){
-    return this.items;
+  getAll() {
+    return this.disciplinas.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });
   }
+  create(disciplina: Disciplina) {
+    this.disciplinas.push(disciplina);
+  }
+  editar(key,disciplina){
+    this.disciplinas.update(key, disciplina);
+  }
+  remover(key){
+    this.disciplinas.remove(key);
+  }
+
+
   
-  
-  
-  
+
+
+
 }
