@@ -4,8 +4,8 @@ import { Questao } from './questao';
 
 export class Disciplina{
     nome: string;
-    aluno: Aluno;
-    professor:Professor;
+    uidAluno = [];
+    uidProfessor;
     nota1: string;
     nota2: string;
     questao: Questao[];

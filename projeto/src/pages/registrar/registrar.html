@@ -14,6 +14,26 @@
                 <ion-col>
                     <ion-item>
                         <ion-label floating>
+                            Nome
+                        </ion-label>
+                        <ion-input name="nome" required type="text" [(ngModel)]="pessoa.nome"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>
+                            Matricula
+                        </ion-label>
+                        <ion-input name="matricula" required type="number" [(ngModel)]="pessoa.matricula"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>
                             Email
                         </ion-label>
                         <ion-input name="email" required [(ngModel)]="usuario.email"></ion-input>
@@ -32,7 +52,6 @@
                 </ion-col>
             </ion-row>
             <ion-row>
-
                 <ion-col>
                     <ion-list>
                         <ion-item>

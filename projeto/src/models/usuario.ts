@@ -1,6 +1,6 @@
 import { Pessoa } from './pessoa';
 
-export class Usuario extends Pessoa{
+export class Usuario{
     email: string;
     senha: string;
 }

@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/map';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 import { Disciplina } from './../../models/disciplina';
 import { Injectable } from '@angular/core';
@@ -17,8 +17,8 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class DisciplinaProvider {
 
-  disciplinas: FirebaseListObservable<any[]>;
-  constructor(public registroProvider: RegistroProvider, public db: AngularFireDatabase, ) {
+  disciplinas: AngularFireList<any>;
+  constructor( public db: AngularFireDatabase ) {
 
     var path = '/disciplinas';
     this.disciplinas = this.db.list(path);

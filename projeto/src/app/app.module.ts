@@ -1,17 +1,21 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { AdicionarAlunoDisciplinaPage } from './../pages/adicionar-aluno-disciplina/adicionar-aluno-disciplina';
 import { AlunoLogadoPage } from './../pages/aluno-logado/aluno-logado';
+import { AlunoProvider } from '../providers/aluno/aluno';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireModule } from "angularfire2";
 import { BrowserModule } from '@angular/platform-browser';
+import { CadastraDisciplinaPage } from './../pages/cadastra-disciplina/cadastra-disciplina';
 import { CadastrarNotasPage } from './../pages/cadastrar-notas/cadastrar-notas';
 import { CriarProvaPage } from './../pages/criar-prova/criar-prova';
 import { DisciplinaProvider } from './../providers/disciplina/disciplina';
 import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { ProfessorLogadoPage } from './../pages/professor-logado/professor-logado';
+import { ProfessorProvider } from '../providers/professor/professor';
 import { RegistrarPage } from './../pages/registrar/registrar';
 import { RegistroProvider } from './../providers/registro/registro';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,6 +39,8 @@ const firebaseConfig = {
     AlunoLogadoPage,
     CriarProvaPage,
     CadastrarNotasPage,
+    CadastraDisciplinaPage,
+    AdicionarAlunoDisciplinaPage
    
   ],
   imports: [
@@ -55,6 +61,8 @@ const firebaseConfig = {
     AlunoLogadoPage,
     CriarProvaPage,
     CadastrarNotasPage,
+    CadastraDisciplinaPage,
+    AdicionarAlunoDisciplinaPage
     
     
     
@@ -64,7 +72,9 @@ const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RegistroProvider,
-    DisciplinaProvider
+    DisciplinaProvider,
+    AlunoProvider,
+    ProfessorProvider
   ]
 })
 export class AppModule {}

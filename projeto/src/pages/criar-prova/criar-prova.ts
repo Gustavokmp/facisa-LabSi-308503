@@ -1,6 +1,6 @@
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { IonicPage, NavController } from 'ionic-angular';
 
-import { AngularFireDatabase } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { Disciplina } from './../../models/disciplina';
 import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
@@ -19,14 +19,14 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'criar-prova.html',
 })
 export class CriarProvaPage {
-  items:  Observable<any[]>;
+  items:  AngularFireList<any>;
   disciplina = {} as Disciplina;
   constructor(public navCtrl: NavController, public db:AngularFireDatabase,
               private disciplinaProvider: DisciplinaProvider) {
-              this.items= this.disciplinaProvider.getAll();
+              /* this.items= this.disciplinaProvider.getAll(); */
   }
 
-  ionViewDidLoad() {
+  /* ionViewDidLoad() {
     console.log('ionViewDidLoad CriarProvaPage');
   }
   lista(){
@@ -36,6 +36,6 @@ export class CriarProvaPage {
   }
   create(){
     this.disciplinaProvider.create(this.disciplina);
-  }
+  } */
 
 }

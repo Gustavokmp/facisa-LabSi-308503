@@ -1,9 +1,10 @@
-
-import { CadastrarNotasPage } from './../cadastrar-notas/cadastrar-notas';
-
-import { CriarProvaPage } from './../criar-prova/criar-prova';
-import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { AdicionarAlunoDisciplinaPage } from './../adicionar-aluno-disciplina/adicionar-aluno-disciplina';
+import { CadastraDisciplinaPage } from './../cadastra-disciplina/cadastra-disciplina';
+import { CadastrarNotasPage } from './../cadastrar-notas/cadastrar-notas';
+import { Component } from '@angular/core';
+import { ProfessorProvider } from './../../providers/professor/professor';
 
 /**
  * Generated class for the ProfessorLogadoPage page.
@@ -19,18 +20,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfessorLogadoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private professorProvider:ProfessorProvider) {
+    this.professorProvider.pegaIdProfessor();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfessorLogadoPage');
   }
 
-  goCriarProva(){
-    this.navCtrl.push(CriarProvaPage);
+  goCriarDisciplina(){
+    this.navCtrl.push(CadastraDisciplinaPage);
   }
   goCadastrarNota(){
     this.navCtrl.push(CadastrarNotasPage);
+  }
+  goCadastraAluno(){
+    this.navCtrl.push(AdicionarAlunoDisciplinaPage);
   }
   goVerHistorico(){
     console.log("Em Construção")

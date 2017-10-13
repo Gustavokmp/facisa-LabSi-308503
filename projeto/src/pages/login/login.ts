@@ -38,6 +38,7 @@ export class LoginPage {
     try{
       const result = this.afAuth.auth.signInWithEmailAndPassword(usuario.email ,  usuario.senha);
       if(result){
+        console.log(result);
         this.navCtrl.push(ProfessorLogadoPage);
       }
       

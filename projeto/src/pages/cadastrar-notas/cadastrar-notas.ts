@@ -1,9 +1,10 @@
 import { IonicPage, NavController } from 'ionic-angular';
 
+import { AngularFireList } from 'angularfire2/database';
 import { Component } from '@angular/core';
 import { Disciplina } from './../../models/disciplina';
 import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
-import {FirebaseListObservable} from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the CadastrarNotasPage page.
@@ -19,12 +20,12 @@ import {FirebaseListObservable} from 'angularfire2';
 })
 export class CadastrarNotasPage {
 
-  items: FirebaseListObservable<any[]>;
+  items: Observable<any>;
   
   disciplina = {} as Disciplina;
   constructor(public navCtrl: NavController,
               private disciplinaProvider: DisciplinaProvider) {
-              this.items= this.disciplinaProvider.getAll();
+              this.items = this.disciplinaProvider.getAll();
               
   }
 
