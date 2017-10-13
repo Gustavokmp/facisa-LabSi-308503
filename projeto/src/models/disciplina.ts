@@ -1,12 +1,12 @@
-import { Questao } from './questao';
-import { Professor } from './professor';
 import { Aluno } from './aluno';
+import { Professor } from './professor';
+import { Questao } from './questao';
+
 export class Disciplina{
-    keyReference:string;
     nome: string;
     aluno: Aluno;
     professor:Professor;
     nota1: string;
     nota2: string;
-    questao: Questao;
+    questao: Questao[];
 }
