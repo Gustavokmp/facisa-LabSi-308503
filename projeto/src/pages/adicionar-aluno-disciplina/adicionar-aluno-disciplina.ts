@@ -30,6 +30,7 @@ export class AdicionarAlunoDisciplinaPage {
     this.disciplinas= this.disciplinaProvider.getAll();
     this.alunos = this.alunoProvider.getAll();
     
+    
     this.idProfessor = this.professorProvider.idProfessor;
   }
 

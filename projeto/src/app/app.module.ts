@@ -16,6 +16,7 @@ import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { ProfessorLogadoPage } from './../pages/professor-logado/professor-logado';
 import { ProfessorProvider } from '../providers/professor/professor';
+import { ProvaProvider } from '../providers/prova/prova';
 import { RegistrarPage } from './../pages/registrar/registrar';
 import { RegistroProvider } from './../providers/registro/registro';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -40,7 +41,7 @@ const firebaseConfig = {
     CriarProvaPage,
     CadastrarNotasPage,
     CadastraDisciplinaPage,
-    AdicionarAlunoDisciplinaPage
+    AdicionarAlunoDisciplinaPage,
    
   ],
   imports: [
@@ -74,7 +75,8 @@ const firebaseConfig = {
     RegistroProvider,
     DisciplinaProvider,
     AlunoProvider,
-    ProfessorProvider
+    ProfessorProvider,
+    ProvaProvider
   ]
 })
 export class AppModule {}

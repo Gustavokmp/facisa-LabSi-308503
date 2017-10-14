@@ -4,6 +4,7 @@ import { AdicionarAlunoDisciplinaPage } from './../adicionar-aluno-disciplina/ad
 import { CadastraDisciplinaPage } from './../cadastra-disciplina/cadastra-disciplina';
 import { CadastrarNotasPage } from './../cadastrar-notas/cadastrar-notas';
 import { Component } from '@angular/core';
+import { CriarProvaPage } from './../criar-prova/criar-prova';
 import { ProfessorProvider } from './../../providers/professor/professor';
 
 /**
@@ -31,8 +32,8 @@ export class ProfessorLogadoPage {
   goCriarDisciplina(){
     this.navCtrl.push(CadastraDisciplinaPage);
   }
-  goCadastrarNota(){
-    this.navCtrl.push(CadastrarNotasPage);
+  goCriaProva(){
+    this.navCtrl.push(CriarProvaPage);
   }
   goCadastraAluno(){
     this.navCtrl.push(AdicionarAlunoDisciplinaPage);

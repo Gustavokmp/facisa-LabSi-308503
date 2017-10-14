@@ -1,4 +1,3 @@
-<!-- 
 <ion-header>
 
     <ion-navbar>
@@ -9,39 +8,53 @@
 
 
 <ion-content padding>
-    <ion-list>
+    <ion-card>
         <ion-item>
-            <ion-label floating>Nome da Disciplina</ion-label>
-            <ion-input type="text" requerid [(ngModel)]="disciplina.nome"></ion-input>
+            <ion-label>Disicplina</ion-label>
+            <ion-select [(ngModel)]="disciplina">
+                <div *ngFor="let item of disciplinas | async">
+                    <div *ngIf="idProfessor == item.uidProfessor">
+                        <ion-option value="{{ item.key}}">{{item.nome }}</ion-option>
+                    </div>
+                </div>
+            </ion-select>
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Questao</ion-label>
-            <ion-input type="text" requerid [(ngModel)]="disciplina.questao"></ion-input>
+            <ion-label>Estagio</ion-label>
+            <ion-select [(ngModel)]="estagio">
+                <ion-option value=1>1 Estagio</ion-option>
+                <ion-option value=2>2 Estagio</ion-option>
+            </ion-select>
         </ion-item>
+    </ion-card>
+    <h2 align="center">Quantidade de Questões Adicionadas {{contador}}</h2>
+    <ion-card *ngIf="contador < 10">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Questão</ion-label>
+                <ion-textarea type="text" [(ngModel)]="questao.descricao"></ion-textarea>
+            </ion-item>
+            <ion-row *ngFor="let altenativa of questao.altenativa">
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>Altenatica</ion-label>
+                        <ion-textarea type="text" [(ngModel)]="altenativa.descricao"></ion-textarea>
+                    </ion-item>
+                </ion-col>
+                <ion-col class="marginAltenativa">
+                    <ion-item>
+                        <ion-label>Verdadeira</ion-label>
+                        <ion-checkbox [(ngModel)]="altenativa.validacao"></ion-checkbox>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <br>
+        </ion-list>
+        <button ion-item color="primary" (click)="adicionarQuestao()">Adicionar</button>
+    </ion-card>
+    <ion-card *ngIf="contador == 10">
+        <button ion-item color="primary" (click)="salvaProva()">Salva Prova</button>
+    </ion-card>
 
-        <ion-item>
-            <ion-label floating>Nome do Aluno</ion-label>
-            <ion-input type="text" requerid [(ngModel)]="disciplina.aluno"></ion-input>
-        </ion-item>
-
-
-    </ion-list>
-    <div padding>
-        <button ion-button color="primary" (click)="create()">Cadastrar</button>
-
-    </div>
-    <div padding>
-        <button ion-button color="primary" (click)="lista()">Ver diciplinas</button>
-
-
-    </div>
-    <ul *ngFor="let item of items | async">
-        <li>{{item.nome| json }}</li>
-        <li>
-            {{ item.key| json }}
-        </li>
-    </ul>
-
-
-</ion-content> -->
+</ion-content>

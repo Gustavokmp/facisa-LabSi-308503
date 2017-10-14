@@ -1,10 +1,14 @@
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { IonicPage, NavController } from 'ionic-angular';
 
+import { Altenativa } from './../../models/Altenativa';
 import { Component } from '@angular/core';
-import { Disciplina } from './../../models/disciplina';
 import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
 import { Observable } from 'rxjs/Observable';
+import { ProfessorProvider } from './../../providers/professor/professor';
+import { Prova } from './../../models/prova';
+import { ProvaProvider } from './../../providers/prova/prova';
+import { Questao } from './../../models/questao';
 
 /**
  * Generated class for the CriarProvaPage page.
@@ -19,23 +23,63 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'criar-prova.html',
 })
 export class CriarProvaPage {
-  items:  AngularFireList<any>;
-  disciplina = {} as Disciplina;
-  constructor(public navCtrl: NavController, public db:AngularFireDatabase,
-              private disciplinaProvider: DisciplinaProvider) {
-              /* this.items= this.disciplinaProvider.getAll(); */
+
+  prova:Prova;
+  questao: Questao;
+  altenativa: Altenativa;
+  disciplinas:  Observable<any[]>;
+  disciplina;
+  idProfessor;
+  estagio:number;
+  contador:number = 0;
+  constructor(public navCtrl: NavController, public db: AngularFireDatabase,
+     private disciplinaProvider: DisciplinaProvider,
+     private professorProvider: ProfessorProvider,
+    private provaProvider:ProvaProvider) {
+    this.prova = new Prova();
+    this.iniciarQuestao();
+    this.adicionarNomeProfessor();
+    this.disciplinas= this.disciplinaProvider.getAll();
+    this.idProfessor = this.professorProvider.idProfessor;
+    
   }
 
-  /* ionViewDidLoad() {
-    console.log('ionViewDidLoad CriarProvaPage');
+  iniciarQuestao(){
+    this.questao = null;
+    this.questao = new Questao();
+    for (var i = 0; i < 5; i++) {
+      this.altenativa = new Altenativa();
+      this.altenativa.validacao = false;
+      this.questao.altenativa.push(this.altenativa);
+    }
   }
-  lista(){
-  this.items.forEach(item => {
-    console.log(item);
-  });
+
+  adicionarQuestao(){
+    this.prova.questao.push(this.questao);
+    this.iniciarQuestao();
+    this.contador++;
   }
-  create(){
-    this.disciplinaProvider.create(this.disciplina);
-  } */
+  salvaProva(){
+    
+    this.prova.estagio = this.estagio;
+    this.prova.idDisciplina = this.disciplina;
+    this.provaProvider.create(this.prova);
+    
+    
+  }
+
+  adicionarNomeProfessor(){
+    let aux = this.professorProvider.getAll();
+    aux.forEach(professor => {
+      for (var i = 0; i < professor.length; i++) {
+        if(professor[i].uid == this.idProfessor){
+          this.prova.professor = professor[i].pessoa.nome;
+          break;
+        }
+      }   
+    });
+  }
+
+
 
 }

@@ -33,12 +33,12 @@ export class CadastrarNotasPage {
     console.log('ionViewDidLoad CadastrarNotasPage');
   }
 
-  salvar(disciplina){
+  /* salvar(disciplina){
     if(this.disciplina.nome){
       return this.items.update(this.disciplina.nome,{disciplina:this.disciplina})
-    }
+    } 
     
-  }
+  }*/
   
 
 }
