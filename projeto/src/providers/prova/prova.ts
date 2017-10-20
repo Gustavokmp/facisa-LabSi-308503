@@ -21,7 +21,7 @@ export class ProvaProvider {
         var path = '/provas';
         this.provas = this.db.list(path);
       }
-	  /* Retorna todas as provas que estão na base de dados*/
+	  /* Retorna todas as provas que estão sei la*/
       getAll() {
         return this.provas.snapshotChanges().map(changes => {
           return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
