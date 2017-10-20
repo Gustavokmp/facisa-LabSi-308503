@@ -9,7 +9,8 @@ import { Prova } from '../../models/prova';
 /*
   Generated class for the ProvaProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
+  See conflito ayrton 
+  objection!!!
   and Angular DI.
 */
 @Injectable()
