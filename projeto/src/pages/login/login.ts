@@ -27,7 +27,7 @@ export class LoginPage {
   tipo:string = "aluno";
   constructor(private afAuth: AngularFireAuth,
     public navCtrl: NavController, public navParams: NavParams) {
-      this.usuario.email = "gustavo@gmail.com";
+      this.usuario.email = "gustavoaluno@gmail.com";
       this.usuario.senha = "gustavo"
   }
 
