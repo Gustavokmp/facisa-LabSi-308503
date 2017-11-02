@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { AlunoProvider } from './../../providers/aluno/aluno';
+import { Component } from '@angular/core';
 
 /**
  * Generated class for the AlunoLogadoPage page.
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AlunoLogadoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alunoP: AlunoProvider) {
+   this.alunoP.pegaIdAluno();
+   
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlunoLogadoPage');
   }
+  verDisicplinas(){
+    this.alunoP.disciplinasRelacionadas();
+  }
+
+ 
 
 }
