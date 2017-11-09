@@ -10,6 +10,7 @@ import { AngularFireModule } from "angularfire2";
 import { BrowserModule } from '@angular/platform-browser';
 import { CadastraDisciplinaPage } from './../pages/cadastra-disciplina/cadastra-disciplina';
 import { CadastrarNotasPage } from './../pages/cadastrar-notas/cadastrar-notas';
+import {SelecionarProvasPage} from './../pages/selecionar-provas/selecionar-provas';
 import { CriarProvaPage } from './../pages/criar-prova/criar-prova';
 import { DisciplinaProvider } from './../providers/disciplina/disciplina';
 import { LoginPage } from './../pages/login/login';
@@ -41,6 +42,7 @@ const firebaseConfig = {
     CriarProvaPage,
     CadastrarNotasPage,
     CadastraDisciplinaPage,
+    SelecionarProvasPage,
     AdicionarAlunoDisciplinaPage,
    
   ],
@@ -62,6 +64,7 @@ const firebaseConfig = {
     AlunoLogadoPage,
     CriarProvaPage,
     CadastrarNotasPage,
+    SelecionarProvasPage,
     CadastraDisciplinaPage,
     AdicionarAlunoDisciplinaPage
     

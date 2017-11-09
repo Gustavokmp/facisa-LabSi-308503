@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SelecionarProvasPage page.
+ * Generated class for the AlunoHistoricoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,17 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-selecionar-provas',
-  templateUrl: 'selecionar-provas.html',
+  selector: 'page-aluno-historico',
+  templateUrl: 'aluno-historico.html',
 })
-export class SelecionarProvasPage {
+export class AlunoHistoricoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log('teste');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SelecionarProvasPage');
+    console.log('ionViewDidLoad AlunoHistoricoPage');
   }
 
 }
