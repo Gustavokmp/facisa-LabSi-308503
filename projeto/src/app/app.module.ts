@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CadastraDisciplinaPage } from './../pages/cadastra-disciplina/cadastra-disciplina';
 import { CadastrarNotasPage } from './../pages/cadastrar-notas/cadastrar-notas';
 import {SelecionarProvasPage} from './../pages/selecionar-provas/selecionar-provas';
+import { AlunoHistoricoPage } from "./../pages/aluno-historico/aluno-historico";
 import { CriarProvaPage } from './../pages/criar-prova/criar-prova';
 import { DisciplinaProvider } from './../providers/disciplina/disciplina';
 import { LoginPage } from './../pages/login/login';
@@ -39,6 +40,7 @@ const firebaseConfig = {
     RegistrarPage,
     ProfessorLogadoPage,
     AlunoLogadoPage,
+    AlunoHistoricoPage,
     CriarProvaPage,
     CadastrarNotasPage,
     CadastraDisciplinaPage,
@@ -62,6 +64,7 @@ const firebaseConfig = {
     RegistrarPage,
     ProfessorLogadoPage,
     AlunoLogadoPage,
+    AlunoHistoricoPage,
     CriarProvaPage,
     CadastrarNotasPage,
     SelecionarProvasPage,

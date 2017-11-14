@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlunoProvider } from './../../providers/aluno/aluno';
 import { Component } from '@angular/core';
 import { SelecionarProvasPage } from './../selecionar-provas/selecionar-provas';
+import { AlunoHistoricoPage } from '../aluno-historico/aluno-historico';
 /**
  * Generated class for the AlunoLogadoPage page.
  *
@@ -30,7 +31,7 @@ export class AlunoLogadoPage {
     this.alunoP.disciplinasRelacionadas();
   }
   goSelecionarProva(){
-    this.navCtrl.push(SelecionarProvasPage);
+    this.navCtrl.push(AlunoHistoricoPage);
   }
  
 
