@@ -2,6 +2,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AlunoProvider } from './../../providers/aluno/aluno';
 import { Component } from '@angular/core';
+import { DisciplinaProvaPage } from './../disciplina-prova/disciplina-prova';
 
 /**
  * Generated class for the AlunoLogadoPage page.
@@ -28,6 +29,7 @@ export class AlunoLogadoPage {
   }
   verDisicplinas(){
     this.alunoP.disciplinasRelacionadas();
+    this.navCtrl.push(DisciplinaProvaPage);
   }
 
  

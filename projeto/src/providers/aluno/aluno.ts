@@ -21,6 +21,7 @@ export class AlunoProvider {
   alunos: AngularFireList<any>;
   idAluno;
   disciplinasMatriculado = [];
+  provaAluno;
 
   constructor(public db: AngularFireDatabase,public afAuth: AngularFireAuth, 
     private disciplina:DisciplinaProvider,
@@ -73,24 +74,28 @@ export class AlunoProvider {
       for (var i = 0; i < disciplinas.length; i++) {
        for (var j = 0; j < disciplinas[i].alunos.length; j++) {
          if(disciplinas[i].alunos[j] == this.idAluno){
-           this.disciplinasMatriculado.push(disciplinas[i].key);
-           this.pegaProva(disciplinas[i].key);
+           this.disciplinasMatriculado.push(disciplinas[i]);
+           console.log(this.disciplinasMatriculado);
            break;
+           
          }
        }
         
       }
     }); 
+
+    
   }
 
   pegaProva(id){
+    this.provaAluno = "";
     let aux = this.prova.getAll();
     aux.forEach(provas => {
       for (var i = 0; i < provas.length; i++) {
        if(provas[i].idDisciplina == id){
-         console.log(provas[i]);
+         this.provaAluno = provas[i];
+         break;
        }
-        
       }
     });
   }

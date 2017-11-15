@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CadastraDisciplinaPage } from './../pages/cadastra-disciplina/cadastra-disciplina';
 import { CadastrarNotasPage } from './../pages/cadastrar-notas/cadastrar-notas';
 import { CriarProvaPage } from './../pages/criar-prova/criar-prova';
+import { DisciplinaProvaPage } from './../pages/disciplina-prova/disciplina-prova';
 import { DisciplinaProvider } from './../providers/disciplina/disciplina';
 import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
@@ -42,6 +43,7 @@ const firebaseConfig = {
     CadastrarNotasPage,
     CadastraDisciplinaPage,
     AdicionarAlunoDisciplinaPage,
+    DisciplinaProvaPage
    
   ],
   imports: [
@@ -63,7 +65,8 @@ const firebaseConfig = {
     CriarProvaPage,
     CadastrarNotasPage,
     CadastraDisciplinaPage,
-    AdicionarAlunoDisciplinaPage
+    AdicionarAlunoDisciplinaPage,
+    DisciplinaProvaPage
     
     
     
