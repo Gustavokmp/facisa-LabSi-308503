@@ -16,6 +16,7 @@ import { DisciplinaProvider } from './../providers/disciplina/disciplina';
 import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { ProfessorLogadoPage } from './../pages/professor-logado/professor-logado';
+import { FormularioProvaPage } from "./../pages/formulario-prova/formulario-prova";
 import { ProfessorProvider } from '../providers/professor/professor';
 import { ProvaProvider } from '../providers/prova/prova';
 import { RegistrarPage } from './../pages/registrar/registrar';
@@ -42,6 +43,7 @@ const firebaseConfig = {
     CriarProvaPage,
     CadastrarNotasPage,
     CadastraDisciplinaPage,
+    FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
     DisciplinaProvaPage
    
@@ -65,6 +67,7 @@ const firebaseConfig = {
     CriarProvaPage,
     CadastrarNotasPage,
     CadastraDisciplinaPage,
+    FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
     DisciplinaProvaPage
     
