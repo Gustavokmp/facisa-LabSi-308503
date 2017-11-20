@@ -17,6 +17,7 @@ import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { ProfessorLogadoPage } from './../pages/professor-logado/professor-logado';
 import { FormularioProvaPage } from "./../pages/formulario-prova/formulario-prova";
+import { AlunoHistoricoPage } from "./../pages/aluno-historico/aluno-historico";
 import { ProfessorProvider } from '../providers/professor/professor';
 import { ProvaProvider } from '../providers/prova/prova';
 import { RegistrarPage } from './../pages/registrar/registrar';
@@ -45,6 +46,7 @@ const firebaseConfig = {
     CadastraDisciplinaPage,
     FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
+    AlunoHistoricoPage,
     DisciplinaProvaPage
    
   ],
@@ -69,8 +71,8 @@ const firebaseConfig = {
     CadastraDisciplinaPage,
     FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
-    DisciplinaProvaPage
-    
+    DisciplinaProvaPage,
+    AlunoHistoricoPage
     
     
   ],
