@@ -22,7 +22,7 @@ export class RegistroProvider {
 
   async registrarSe(usuario: Usuario){
     try{
-      const result = await this.afAuth.auth.createUserWithEmailAndPassword(usuario.email , usuario.senha);
+      let result = await this.afAuth.auth.createUserWithEmailAndPassword(usuario.email , usuario.senha);
       this.afAuth.authState.subscribe(res => {
         if (res && res.uid) {
           this.idCadastrado= res.uid;

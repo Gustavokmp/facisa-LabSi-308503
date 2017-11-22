@@ -4,7 +4,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 import { Disciplina } from './../../models/disciplina';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+
 import { RegistroProvider } from './../registro/registro';
 import { Subject } from 'rxjs/Subject';
 

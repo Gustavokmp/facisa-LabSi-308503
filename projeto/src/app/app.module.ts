@@ -22,6 +22,7 @@ import { RegistrarPage } from './../pages/registrar/registrar';
 import { RegistroProvider } from './../providers/registro/registro';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { RealizarProvaPage } from '../pages/realizar-prova/realizar-prova';
 
 const firebaseConfig = {
   apiKey: "AIzaSyALMT_OzlFA-SG4ppBVlqcyBWPOxQQIXvg",
@@ -43,7 +44,8 @@ const firebaseConfig = {
     CadastrarNotasPage,
     CadastraDisciplinaPage,
     AdicionarAlunoDisciplinaPage,
-    DisciplinaProvaPage
+    DisciplinaProvaPage,
+    RealizarProvaPage
    
   ],
   imports: [
@@ -66,7 +68,8 @@ const firebaseConfig = {
     CadastrarNotasPage,
     CadastraDisciplinaPage,
     AdicionarAlunoDisciplinaPage,
-    DisciplinaProvaPage
+    DisciplinaProvaPage,
+    RealizarProvaPage
     
     
     

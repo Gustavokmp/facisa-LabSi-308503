@@ -1,3 +1,4 @@
+import { RealizarProvaPage } from './../realizar-prova/realizar-prova';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {AlunoProvider} from '../../providers/aluno/aluno';
@@ -35,7 +36,7 @@ export class DisciplinaProvaPage {
      if(this.alunoP.provaAluno == "" ){
       alert("Não tem prova para essa disciplina");
     }else{
-      alert("Existe prova para essa disciplina");
+      this.navCtrl.push(RealizarProvaPage);
     }
   }
 

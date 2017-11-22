@@ -1,5 +1,4 @@
-import { Aluno } from './aluno';
-import { Professor } from './professor';
+
 import { Prova } from './prova';
 import { Questao } from './questao';
 
