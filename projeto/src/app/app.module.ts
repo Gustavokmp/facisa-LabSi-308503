@@ -2,6 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { AdicionarAlunoDisciplinaPage } from './../pages/adicionar-aluno-disciplina/adicionar-aluno-disciplina';
+import { AlunoHistoricoPage } from "./../pages/aluno-historico/aluno-historico";
 import { AlunoLogadoPage } from './../pages/aluno-logado/aluno-logado';
 import { AlunoProvider } from '../providers/aluno/aluno';
 import { AngularFireAuthModule } from "angularfire2/auth";
@@ -13,13 +14,13 @@ import { CadastrarNotasPage } from './../pages/cadastrar-notas/cadastrar-notas';
 import { CriarProvaPage } from './../pages/criar-prova/criar-prova';
 import { DisciplinaProvaPage } from './../pages/disciplina-prova/disciplina-prova';
 import { DisciplinaProvider } from './../providers/disciplina/disciplina';
+import { FormularioProvaPage } from "./../pages/formulario-prova/formulario-prova";
 import { LoginPage } from './../pages/login/login';
 import { MyApp } from './app.component';
 import { ProfessorLogadoPage } from './../pages/professor-logado/professor-logado';
-import { FormularioProvaPage } from "./../pages/formulario-prova/formulario-prova";
-import { AlunoHistoricoPage } from "./../pages/aluno-historico/aluno-historico";
 import { ProfessorProvider } from '../providers/professor/professor';
 import { ProvaProvider } from '../providers/prova/prova';
+import { RealizarProvaPage } from '../pages/realizar-prova/realizar-prova';
 import { RegistrarPage } from './../pages/registrar/registrar';
 import { RegistroProvider } from './../providers/registro/registro';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,8 +47,9 @@ const firebaseConfig = {
     CadastraDisciplinaPage,
     FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
-    AlunoHistoricoPage,
-    DisciplinaProvaPage
+    DisciplinaProvaPage,
+    RealizarProvaPage
+
    
   ],
   imports: [
@@ -72,7 +74,8 @@ const firebaseConfig = {
     FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
     DisciplinaProvaPage,
-    AlunoHistoricoPage
+    RealizarProvaPage
+    
     
     
   ],

@@ -1,4 +1,4 @@
-import { Pessoa } from './pessoa';
+
 
 export class Usuario{
     email: string;

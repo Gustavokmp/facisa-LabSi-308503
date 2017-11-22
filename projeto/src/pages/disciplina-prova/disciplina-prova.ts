@@ -3,6 +3,7 @@ import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angu
 import {AlunoProvider} from '../../providers/aluno/aluno';
 import { Component } from '@angular/core';
 import { FormularioProvaPage } from '../formulario-prova/formulario-prova';
+import { RealizarProvaPage } from './../realizar-prova/realizar-prova';
 
 /**
  * Generated class for the DisciplinaProvaPage page.
@@ -56,8 +57,8 @@ com o num disponivel, passando elas ao clicar em avançar ou voltar.
       // alert("Não tem prova para essa disciplina");
       return false;
     }else{
-     this.goToProva();
-      // return this.prova.date;
+
+      this.navCtrl.push(RealizarProvaPage);
     }
   }
 
