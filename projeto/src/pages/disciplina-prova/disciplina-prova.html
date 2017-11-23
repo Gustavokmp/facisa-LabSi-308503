@@ -19,12 +19,12 @@
         <ion-label>Disicplina</ion-label>
         <ion-select [(ngModel)]="disciplina">
             <div *ngFor="let item of alunoP.disciplinasMatriculado">
-                <ion-option value="{{ item.key}}" (ionSelect)="realizarProva(item.key)">{{item.nome}}</ion-option>
+                <ion-option value="{{ item.key}}" (ionSelect)="realizarProva(item.key,item.nome)">{{item.nome}}</ion-option>
             </div>
         </ion-select>
     </ion-item>
     <button ion-item color="primary" (click)="ok()">Prova</button>
-    <button ion-item (click)="goToProva()" >Iniciar teste</button>
+    <button ion-item (click)="goToProva()">Iniciar teste</button>
     <!-- comm 
         <button ion-item>
     -->

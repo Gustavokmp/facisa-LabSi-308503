@@ -1,4 +1,4 @@
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {AlunoProvider} from '../../providers/aluno/aluno';
 import { Component } from '@angular/core';
@@ -25,9 +25,10 @@ export class DisciplinaProvaPage {
     console.log('ionViewDidLoad DisciplinaProvaPage');
   }
 
-  realizarProva(id){
+  realizarProva(id,nome){
     console.log(id);
     this.alunoP.pegaProva(this.disciplina);
+    this.alunoP.nomeDisciplina = nome;
    
   }
 /*
@@ -45,7 +46,6 @@ com o num disponivel, passando elas ao clicar em avançar ou voltar.
 
 */
   ok(){
-    console.log(this.alunoP.provaAluno);
      if(this.alunoP.provaAluno == "" ){
       let alert = this.alertCtrl.create({
         title: 'Não pode',
@@ -56,13 +56,14 @@ com o num disponivel, passando elas ao clicar em avançar ou voltar.
       // alert("Não tem prova para essa disciplina");
       return false;
     }else{
-      alert("Existe prova para essa disciplina");
+     this.goToProva();
       // return this.prova.date;
     }
   }
 
   goToProva() {
     this.navCtrl.push(FormularioProvaPage);
+  
   }
 
 }

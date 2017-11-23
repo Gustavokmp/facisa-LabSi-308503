@@ -22,6 +22,7 @@ export class AlunoProvider {
   idAluno;
   disciplinasMatriculado = [];
   provaAluno;
+  nomeDisciplina;
 
   constructor(public db: AngularFireDatabase,public afAuth: AngularFireAuth, 
     private disciplina:DisciplinaProvider,
@@ -75,7 +76,6 @@ export class AlunoProvider {
        for (var j = 0; j < disciplinas[i].alunos.length; j++) {
          if(disciplinas[i].alunos[j] == this.idAluno){
            this.disciplinasMatriculado.push(disciplinas[i]);
-           console.log(this.disciplinasMatriculado);
            break;
            
          }

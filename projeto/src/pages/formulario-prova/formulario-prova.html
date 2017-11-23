@@ -6,46 +6,29 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>formulario-prova</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Prova de {{alunoP.nomeDisciplina}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <ion-card padding>
-    Tempo de prova:
+    <ion-card padding>
+        <h1 align="center">Questao: {{questao.descricao}}</h1>
 
-    <title> </title>
-    <div allign center> textão </div>
-    <ion-grid>
-      <ion-list radio-group>
-      <ion-item>
-        <ion-radio checked="true" value="altA"> Pedro </ion-radio>
-        <ion-label>Pedro cabral</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-radio value="altA"> A - </ion-radio>
-      </ion-item>
-    </ion-list>
-       <!-- <ion-radio value="altC">textoC }}}</ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-radio value="altD">textoD }}}</ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-radio value="altE">textoE }}}</ion-radio>
-      </ion-item> 
-        
-      -->
-    </ion-grid>
-    <button ion-button color="primary">  back </button>
-    <div class="bar-onleft" >
-    <button ion-button text-right> <ion-icon range-left name='arrow-dropleft-circle'></ion-icon> Salvar e voltar </button>
-      <button ion-button> enviar</button>
-      <button ion-button> next </button>
-  </div>
-  </ion-card>
+        <ion-list radio-group [(ngModel)]="resposta">
+            <h2 align="center">
+                Altenativas
+            </h2>
+
+            <ion-item *ngFor="let altenativa of questao.altenativa">
+                <ion-label>{{altenativa.descricao}}</ion-label>
+                <ion-radio value="{{altenativa}}"></ion-radio>
+            </ion-item>
+
+        </ion-list>
+    </ion-card>
+    <button ion-item (click)="proximaQuestao()">Proxima</button>
 </ion-content>
