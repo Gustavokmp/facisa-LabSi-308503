@@ -6,6 +6,7 @@ import { CadastrarNotasPage } from './../cadastrar-notas/cadastrar-notas';
 import { Component } from '@angular/core';
 import { CriarProvaPage } from './../criar-prova/criar-prova';
 import { ProfessorProvider } from './../../providers/professor/professor';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the ProfessorLogadoPage page.
@@ -40,6 +41,9 @@ export class ProfessorLogadoPage {
   }
   goVerHistorico(){
     console.log("Em Construção")
+  }
+  sair(){
+    this.navCtrl.push(LoginPage);
   }
 
 }

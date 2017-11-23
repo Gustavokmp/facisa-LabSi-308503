@@ -9,6 +9,7 @@ import { ProfessorProvider } from './../../providers/professor/professor';
 import { Prova } from './../../models/prova';
 import { ProvaProvider } from './../../providers/prova/prova';
 import { Questao } from './../../models/questao';
+import { ProfessorLogadoPage } from '../professor-logado/professor-logado';
 
 /**
  * Generated class for the CriarProvaPage page.
@@ -64,6 +65,7 @@ export class CriarProvaPage {
     this.prova.estagio = this.estagio;
     this.prova.idDisciplina = this.disciplina;
     this.provaProvider.create(this.prova);
+    this.navCtrl.push(ProfessorLogadoPage);
     
     
   }
@@ -78,6 +80,10 @@ export class CriarProvaPage {
         }
       }   
     });
+  }
+
+  cancelar(){
+    this.navCtrl.push(ProfessorLogadoPage);
   }
 
 

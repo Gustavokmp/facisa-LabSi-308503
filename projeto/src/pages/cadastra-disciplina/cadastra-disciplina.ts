@@ -1,3 +1,4 @@
+import { ProfessorLogadoPage } from './../professor-logado/professor-logado';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Component } from '@angular/core';
@@ -36,6 +37,10 @@ export class CadastraDisciplinaPage {
   cria(){
     console.log(this.disciplina);
     this.disciplinaP.create(this.disciplina);
+    this.navCtrl.push(ProfessorLogadoPage);
+  }
+  cancelar(){
+    this.navCtrl.push(ProfessorLogadoPage);
   }
 
 }

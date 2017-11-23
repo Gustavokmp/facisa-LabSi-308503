@@ -1,13 +1,54 @@
-<!--
-  Generated template for the ProfessorLogadoPage page.
+<ion-content class="login-content" padding>
+    <ion-row class="logo-row">
+        <ion-col></ion-col>
+        <ion-col width-67>
+            <img src="assets/imgs/logo-unifacisa2.png"/>
+        </ion-col>
+        <ion-col>
+                <!--<button class="button" (click)="desconectar()">
+                    <ion-icon ios="ios-close" md="md-close">
+                    </ion-icon>
+                </button>-->
+        </ion-col>
+    </ion-row>
+    <ion-grid class="grid-conteudo">
+        <ion-row class="grid-menu">
+            <ion-col col-5>
+                <button class="button btn-menu" (click)="goCriarDisciplina()">
+                    <ion-icon ios="ios-add-circle" md="md-add-circle">
+                        <h1 class="desc-menu" style="margin-top: 4px">Criar Disciplina</h1>
+                    </ion-icon>
+                </button>  
+            </ion-col>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-content padding>
-    <ion-list inset>
-        <button ion-item color="primary" (click)="goCriarDisciplina()">Cadastrar Disciplina</button>
-        <button ion-item color="primary" (click)="goCadastraAluno()">Adicionar Aluno</button>
-        <button ion-item color="primary" (click)="goCriaProva()">Cria Prova</button>
-    </ion-list>
+            <ion-col col-5>
+                <button class="button btn-menu" (click)="goCadastraAluno()">
+                    <ion-icon ios="ios-add-circle" md="md-add-circle">
+                        <h1 class="desc-menu" style="margin-top: 1px">Cadastrar Aluno</h1>
+                    </ion-icon>
+                </button>
+            </ion-col>
+
+            <ion-col col-5>
+                <button class="button btn-menu" (click)="goCriaProva()">
+                    <ion-icon ios="ios-paper" md="md-paper">
+                        <h6 class="desc-menu" style="margin-top: 10px">Criar Prova</h6>
+                    </ion-icon>
+                </button>
+            </ion-col>
+
+            <ion-col col-5>
+                <button class="button btn-menu" (click)="verHistorico()">
+                    <ion-icon ios="ios-paper" md="md-paper">
+                        <h6 class="desc-menu" style="margin-top: 10px">Histórico</h6>
+                    </ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-fab top right edge style="margin-top: 10%;" (click)="sair()">
+        <button ion-fab mini style="background-color: #488aff !important;">
+            <ion-icon ios="ios-close" md="md-close"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>
