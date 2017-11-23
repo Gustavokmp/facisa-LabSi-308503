@@ -1,6 +1,7 @@
 
 import { Prova } from './prova';
 import { Questao } from './questao';
+import { Historico } from './historico';
 
 export class Disciplina{
     nome: string;
@@ -11,4 +12,5 @@ export class Disciplina{
     questao: Questao[];
     prova1: Prova;
     prova2: Prova;
+    historico:Historico;
 }

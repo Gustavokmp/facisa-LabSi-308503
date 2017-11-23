@@ -5,7 +5,7 @@ import { AlunoProvider } from '../../providers/aluno/aluno';
 import { Component } from '@angular/core';
 import { Historico } from '../../models/historico';
 import { HistoricoProvider } from '../../providers/historico/historico';
-import { Prova } from './../../models/prova';
+
 
 /**
  * Generated class for the RealizarProvaPage page.
@@ -50,7 +50,7 @@ export class RealizarProvaPage {
     h.idAluno = this.providerAluno.idAluno;
     h.idDisciplina = this.providerAluno.provaAluno.idDisciplina;
     h.nomeDisciplina = this.providerAluno.nomeDisciplina;
-    h.nota = this.nota;
+    h.nota = this.providerAluno.nota;
     this.historicoP.create(h);
     this.navCtrl.push(AlunoLogadoPage);
   }

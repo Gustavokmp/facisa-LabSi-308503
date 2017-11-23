@@ -23,6 +23,7 @@ export class AlunoProvider {
   disciplinasMatriculado = [];
   provaAluno;
   nomeDisciplina;
+  nota;
 
   constructor(public db: AngularFireDatabase,public afAuth: AngularFireAuth, 
     private disciplina:DisciplinaProvider,
