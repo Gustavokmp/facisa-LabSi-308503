@@ -25,6 +25,7 @@ import { RegistrarPage } from './../pages/registrar/registrar';
 import { RegistroProvider } from './../providers/registro/registro';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HistoricoProvider } from '../providers/historico/historico';
 
 const firebaseConfig = {
   apiKey: "AIzaSyALMT_OzlFA-SG4ppBVlqcyBWPOxQQIXvg",
@@ -87,7 +88,8 @@ const firebaseConfig = {
     DisciplinaProvider,
     AlunoProvider,
     ProfessorProvider,
-    ProvaProvider
+    ProvaProvider,
+    HistoricoProvider
   ]
 })
 export class AppModule {}

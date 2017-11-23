@@ -29,14 +29,16 @@
                     </ion-item>
                 </div>
             </ion-list>
-            <button ion-button (click)="responder()">Proxima</button>
+            <button ion-button (click)="responder()" class="centralizarBotao">Proxima</button>
 
         </ion-card>
 
     </div>
     <div *ngIf="vez == 10">
-        <h1>Nota: {{nota}}</h1>
-        <button ion-button (click)="sair()">Sair</button>
+        <ion-card>
+            <h1 align="center">Nota: {{nota}}</h1>
+            <button ion-button (click)="sair()" class="centralizarBotao">Sair</button>
+        </ion-card>
     </div>
 
 

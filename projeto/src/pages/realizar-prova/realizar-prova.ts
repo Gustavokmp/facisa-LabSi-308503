@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlunoLogadoPage } from './../aluno-logado/aluno-logado';
 import { AlunoProvider } from '../../providers/aluno/aluno';
 import { Component } from '@angular/core';
+import { Historico } from '../../models/historico';
+import { HistoricoProvider } from '../../providers/historico/historico';
 import { Prova } from './../../models/prova';
 
 /**
@@ -22,7 +24,7 @@ export class RealizarProvaPage {
   nota = 0;
   vez = 1;
   resposta;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private providerAluno: AlunoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private providerAluno: AlunoProvider,private historicoP:HistoricoProvider) {
    
   }
 
@@ -44,6 +46,12 @@ export class RealizarProvaPage {
     console.log(this.nota);
   }
   sair(){
+    let h = new Historico();
+    h.idAluno = this.providerAluno.idAluno;
+    h.idDisciplina = this.providerAluno.provaAluno.idDisciplina;
+    h.nomeDisciplina = this.providerAluno.nomeDisciplina;
+    h.nota = this.nota;
+    this.historicoP.create(h);
     this.navCtrl.push(AlunoLogadoPage);
   }
 }
