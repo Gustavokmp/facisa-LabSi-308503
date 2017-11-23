@@ -2,7 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { AdicionarAlunoDisciplinaPage } from './../pages/adicionar-aluno-disciplina/adicionar-aluno-disciplina';
-import { AlunoHistoricoPage } from "./../pages/aluno-historico/aluno-historico";
+
 import { AlunoLogadoPage } from './../pages/aluno-logado/aluno-logado';
 import { AlunoProvider } from '../providers/aluno/aluno';
 import { AngularFireAuthModule } from "angularfire2/auth";
@@ -26,6 +26,7 @@ import { RegistroProvider } from './../providers/registro/registro';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HistoricoProvider } from '../providers/historico/historico';
+import { AlunoHistoricoPage } from '../pages/aluno-historico/aluno-historico';
 
 const firebaseConfig = {
   apiKey: "AIzaSyALMT_OzlFA-SG4ppBVlqcyBWPOxQQIXvg",
@@ -49,9 +50,8 @@ const firebaseConfig = {
     FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
     DisciplinaProvaPage,
-    RealizarProvaPage
-
-   
+    RealizarProvaPage,
+    AlunoHistoricoPage
   ],
   imports: [
     BrowserModule,
@@ -75,10 +75,9 @@ const firebaseConfig = {
     FormularioProvaPage,
     AdicionarAlunoDisciplinaPage,
     DisciplinaProvaPage,
-    RealizarProvaPage
-    
-    
-    
+    RealizarProvaPage,
+    AlunoHistoricoPage
+   
   ],
   providers: [
     StatusBar,
