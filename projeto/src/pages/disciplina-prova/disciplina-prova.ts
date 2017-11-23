@@ -27,7 +27,7 @@ export class DisciplinaProvaPage {
   }
 
   realizarProva(id,nome){
-    console.log(id);
+    console.log(id,nome);
     this.alunoP.pegaProva(this.disciplina);
     this.alunoP.nomeDisciplina = nome;
    

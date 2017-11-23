@@ -6,15 +6,31 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>RealizarProva</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Prova de {{providerAluno.nomeDisciplina}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <div *ngFor="let item of prova | async"></div>
-  
-  <h1>{{prova.professor}}</h1>
+    <!-- <div *ngFor="let questao of prova">
+        <ion-card padding>
+            <h1 align="center">Questao: {{questao.descricao}}</h1>
+
+            <ion-list radio-group>
+                <h2 align="center">
+                    Altenativas
+                </h2>
+                <ion-item *ngFor="let altenativa of questao.altenativa">
+                    <ion-label class="tituloAltenativa">{{altenativa.descricao}}</ion-label>
+                    <ion-radio value="{{altenativa}}"></ion-radio>
+                </ion-item>
+
+            </ion-list>
+        </ion-card>
+
+    </div> -->
+
+
 </ion-content>

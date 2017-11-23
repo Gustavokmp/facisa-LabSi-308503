@@ -1,7 +1,8 @@
-import { Prova } from './../../models/prova';
-import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { AlunoProvider } from '../../providers/aluno/aluno';
+import { Component } from '@angular/core';
+import { Prova } from './../../models/prova';
 
 /**
  * Generated class for the RealizarProvaPage page.
@@ -18,10 +19,12 @@ import { AlunoProvider } from '../../providers/aluno/aluno';
 export class RealizarProvaPage {
   prova;
   constructor(public navCtrl: NavController, public navParams: NavParams, private providerAluno: AlunoProvider) {
-    this.prova = this.providerAluno.provaAluno;
+   
   }
 
   ionViewDidLoad() {
+    this.prova = this.providerAluno.provaAluno;
+    console.log(this.prova);
     console.log('ionViewDidLoad RealizarProvaPage');
   }
 

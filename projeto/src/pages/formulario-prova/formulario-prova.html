@@ -18,13 +18,12 @@
     <ion-card padding>
         <h1 align="center">Questao: {{questao.descricao}}</h1>
 
-        <ion-list radio-group [(ngModel)]="resposta">
+        <ion-list radio-group>
             <h2 align="center">
                 Altenativas
             </h2>
-
             <ion-item *ngFor="let altenativa of questao.altenativa">
-                <ion-label>{{altenativa.descricao}}</ion-label>
+                <ion-label class="tituloAltenativa">{{altenativa.descricao}}</ion-label>
                 <ion-radio value="{{altenativa}}"></ion-radio>
             </ion-item>
 
