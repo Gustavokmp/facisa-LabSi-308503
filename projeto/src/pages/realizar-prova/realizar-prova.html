@@ -14,23 +14,30 @@
 
 
 <ion-content padding>
-    <!-- <div *ngFor="let questao of prova">
-        <ion-card padding>
-            <h1 align="center">Questao: {{questao.descricao}}</h1>
+    <div *ngFor="let questao of prova ; let i = index;">
+        <ion-card padding *ngIf="vez == i">
+            <h1 align="center">Questao {{i+1}}: {{questao.descricao}}</h1>
 
             <ion-list radio-group>
                 <h2 align="center">
                     Altenativas
                 </h2>
-                <ion-item *ngFor="let altenativa of questao.altenativa">
-                    <ion-label class="tituloAltenativa">{{altenativa.descricao}}</ion-label>
-                    <ion-radio value="{{altenativa}}"></ion-radio>
-                </ion-item>
-
+                <div>
+                    <ion-item *ngFor="let altenativa of questao.altenativa">
+                        <ion-label class="tituloAltenativa" align="center">{{altenativa.descricao}}</ion-label>
+                        <ion-radio (click)="selecionada(altenativa.validacao)"></ion-radio>
+                    </ion-item>
+                </div>
             </ion-list>
+            <button ion-button (click)="responder()">Proxima</button>
+
         </ion-card>
 
-    </div> -->
+    </div>
+    <div *ngIf="vez == 10">
+        <h1>Nota: {{nota}}</h1>
+        <button ion-button (click)="sair()">Sair</button>
+    </div>
 
 
 </ion-content>
