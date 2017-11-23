@@ -1,60 +1,58 @@
-<ion-header>
+<ion-content class="login-content" padding>
+    <div class="login-box">
+        <h1 class="login-title">Criar Prova</h1>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Disciplina</ion-label>
+                    <ion-select [(ngModel)]="disciplina">
+                        <div *ngFor="let item of disciplinas | async">
+                            <div *ngIf="idProfessor == item.uidProfessor">
+                                <ion-option value="{{ item.key}}">{{item.nome }}</ion-option>
+                            </div>
+                        </div>
+                    </ion-select>
+                </ion-item>
 
-    <ion-navbar>
-        <ion-title>Criar Prova</ion-title>
-    </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-    <ion-card>
-        <ion-item>
-            <ion-label>Disicplina</ion-label>
-            <ion-select [(ngModel)]="disciplina">
-                <div *ngFor="let item of disciplinas | async">
-                    <div *ngIf="idProfessor == item.uidProfessor">
-                        <ion-option value="{{ item.key}}">{{item.nome }}</ion-option>
-                    </div>
-                </div>
-            </ion-select>
-        </ion-item>
-
-        <ion-item>
-            <ion-label>Estagio</ion-label>
-            <ion-select [(ngModel)]="estagio">
-                <ion-option value=1>1 Estagio</ion-option>
-                <ion-option value=2>2 Estagio</ion-option>
-            </ion-select>
-        </ion-item>
-    </ion-card>
-    <h2 align="center">Quantidade de Questões Adicionadas {{contador}}</h2>
-    <ion-card *ngIf="contador < 10">
+                <ion-item>
+                    <ion-label>Estagio</ion-label>
+                        <ion-select [(ngModel)]="estagio">
+                            <ion-option value=1>1 Estagio</ion-option>
+                            <ion-option value=2>2 Estagio</ion-option>
+                        </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
         <ion-list>
-            <ion-item>
-                <ion-label floating>Questão</ion-label>
-                <ion-textarea type="text" [(ngModel)]="questao.descricao"></ion-textarea>
-            </ion-item>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-textarea type="text" placeholder="Descrição" name="Descrição" [(ngModel)]="questao.descricao"></ion-textarea>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
             <ion-row *ngFor="let altenativa of questao.altenativa">
                 <ion-col>
                     <ion-item>
-                        <ion-label floating>Altenatica</ion-label>
-                        <ion-textarea type="text" [(ngModel)]="altenativa.descricao"></ion-textarea>
+                        <ion-textarea type="text" placeholder="Descrição da Alternativa" name="Descrição da Alternativa" [(ngModel)]="altenativa.descricao"></ion-textarea>
                     </ion-item>
                 </ion-col>
                 <ion-col class="marginAltenativa">
                     <ion-item>
-                        <ion-label>Verdadeira</ion-label>
                         <ion-checkbox [(ngModel)]="altenativa.validacao"></ion-checkbox>
                     </ion-item>
                 </ion-col>
             </ion-row>
-            <br>
         </ion-list>
-        <button ion-item color="primary" (click)="adicionarQuestao()">Adicionar</button>
-    </ion-card>
-    <ion-card *ngIf="contador == 10">
-        <button ion-item color="primary" (click)="salvaProva()">Salva Prova</button>
-    </ion-card>
-
+        <ion-row>
+            <ion-col class="signup-col">
+                <button ion-button class="submit-btn" full type="submit" (click)="adicionarQuestao()">Criar Prova</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="signup-col">
+                <button ion-button class="submit-btn-cancel" full type="button" (click)="cancelar()">Cancelar</button>
+            </ion-col>
+        </ion-row>
+    </div>
 </ion-content>

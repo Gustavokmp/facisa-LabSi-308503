@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 import { DisciplinaProvider } from './../../providers/disciplina/disciplina';
 import { Observable } from 'rxjs/Observable';
 import { ProfessorProvider } from './../../providers/professor/professor';
+import { ProfessorLogadoPage } from '../professor-logado/professor-logado';
 
 /**
  * Generated class for the AdicionarAlunoDisciplinaPage page.
@@ -39,6 +40,10 @@ export class AdicionarAlunoDisciplinaPage {
   }
   adicionarAlunos(){
    this.disciplinaProvider.editar(this.disciplina,{alunos:this.listaAluno});
+   this.navCtrl.push(ProfessorLogadoPage);
+  }
+  cancelar(){
+    this.navCtrl.push(ProfessorLogadoPage);
   }
 
 }

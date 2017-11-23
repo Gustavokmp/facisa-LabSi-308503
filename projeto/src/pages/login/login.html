@@ -1,6 +1,6 @@
-<ion-content padding>
+<ion-content class="login-content" padding>
     <div padding>
-        <ion-segment [(ngModel)]="tipo">
+        <ion-segment [(ngModel)]="tipo" color="light">
             <ion-segment-button value="aluno">
                 Aluno
             </ion-segment-button>
@@ -9,95 +9,73 @@
             </ion-segment-button>
         </ion-segment>
     </div>
-    <ion-card>
-        <ion-card-header color="black">
-            Login
-        </ion-card-header>
+    <ion-row class="logo-row">
+        <ion-col></ion-col>
+        <ion-col width-67>
+            <img src="assets/imgs/logo-unifacisa2.png" />
+        </ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+    <div class="login-box">
+
         <div [ngSwitch]="tipo">
             <ion-list *ngSwitchCase="'aluno'">
-                <ion-card-content>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col>
-                                <ion-item>
-                                    <ion-label floating color="primary">
-                                        Email
-                                    </ion-label>
-                                    <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
-                                </ion-item>
-                            </ion-col>
-                        </ion-row>
-
-                        <ion-row>
-                            <ion-col>
-                                <ion-item>
-                                    <ion-label floating color="primary">
-                                        Senha
-                                    </ion-label>
-                                    <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
-                                </ion-item>
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col>
-                                <button ion-button round full color="primary" (click)="logarAluno(usuario)">
-                        Login Aluno
-                      </button>
-                            </ion-col>
-                        </ion-row>
-
-                        <ion-row>
-                            <ion-col>
-                                <a (click)="goRegistrar()">Registrar-se</a>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-card-content>
-            </ion-list>
-            <ion-list *ngSwitchCase="'professor'">
-                <ion-card-content>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col>
-                                <ion-item>
-                                    <ion-label floating color="primary">
-                                        Email
-                                    </ion-label>
-                                    <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
-                                </ion-item>
-                            </ion-col>
-                        </ion-row>
-
-                        <ion-row>
-                            <ion-col>
-                                <ion-item>
-                                    <ion-label floating color="primary">
-                                        Senha
-                                    </ion-label>
-                                    <ion-input type="password" [(ngModel)]="usuario.senha"></ion-input>
-                                </ion-item>
-                            </ion-col>
-                        </ion-row>
-
-                        <ion-row>
-                            <ion-col>
-                                <button ion-button round full color="primary" (click)="logarProfessor(usuario)">
-                        Login Professor
-                      </button>
-                            </ion-col>
-                        </ion-row>
-
-                        <ion-row>
-                            <ion-col>
-                                <a (click)="goRegistrar()">Registrar-se</a>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-card-content>
+                <ion-row>
+                    <ion-col>
+                        <ion-list inset>
+                            <label class="texto-login" style="color:white">LOGIN</label>
+                            <ion-item>
+                                <ion-input type="text" placeholder="Email" name="email" required [(ngModel)]="usuario.email"></ion-input>
+                            </ion-item>
+                            <label class="texto-login" style="color: white">SENHA</label>
+                            <ion-item>
+                                <ion-input type="password" placeholder="Senha" name="password" required [(ngModel)]="usuario.senha"></ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button class="submit-btn btn-login" full (click)="logarAluno(usuario)">Acessar</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="signup-col">
+                        <button ion-button class="register-btn" block clear (click)="goRegistrar()">Criar Nova Conta</button>
+                    </ion-col>
+                </ion-row>
             </ion-list>
         </div>
 
-    </ion-card>
 
+        <div [ngSwitch]="tipo">
+            <ion-list *ngSwitchCase="'professor'">
+                <ion-row>
+                    <ion-col>
+                        <ion-list inset>
+                            <label class="texto-login" style="color:white">LOGIN</label>
+                            <ion-item>
+                                <ion-input type="text" placeholder="Email" name="email" required [(ngModel)]="usuario.email"></ion-input>
+                            </ion-item>
+                            <label class="texto-login" style="color: white">SENHA</label>
+                            <ion-item>
+                                <ion-input type="password" placeholder="Senha" name="password" required [(ngModel)]="usuario.senha"></ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button class="submit-btn btn-login" full (click)="logarProfessor(usuario)">Acessar</button>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="signup-col">
+                        <button ion-button class="register-btn" block clear (click)="goRegistrar()">Criar Nova Conta</button>
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </div>
 
+    </div>
 </ion-content>

@@ -44,6 +44,9 @@ export class RegistrarPage {
       this.pegaId();   
       this.navCtrl.push(LoginPage);
     }
+    cancelar(){
+      this.navCtrl.push(LoginPage);
+    }
 
 
     pegaId(){
