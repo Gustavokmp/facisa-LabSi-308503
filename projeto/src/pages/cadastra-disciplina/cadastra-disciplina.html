@@ -1,0 +1,23 @@
+<ion-content class="login-content" padding>
+    <ion-row>
+        <ion-col>
+            <ion-list inset>
+                <h6 class="select-profile"> Cadastre a disciplina desejada: </h6>
+                <ion-item>
+                    <ion-input type="text" placeholder="Nome da Disciplina" name="Nome da Disciplina" [(ngModel)]="disciplina.nome" required></ion-input>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full type="submit" (click)="cria()">Cadastrar</button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="signup-col">
+            <button ion-button class="submit-btn-cancel" full type="button" (click)="cancelar()">Cancelar</button>
+        </ion-col>
+    </ion-row>
+</ion-content>

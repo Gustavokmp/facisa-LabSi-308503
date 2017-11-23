@@ -1,9 +1,9 @@
+import 'rxjs/add/operator/map';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Usuario } from './../../models/usuario';
+import { AngularFireList } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
-
-import 'rxjs/add/operator/map';
+import { Usuario } from './../../models/usuario';
 
 /*
   Generated class for the RegistroProvider provider.
@@ -14,18 +14,28 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RegistroProvider {
 
+  idCadastrado;
+ 
   constructor(
     public afAuth: AngularFireAuth) {
-    console.log('Hello LoginProvider Provider');
 }
 
   async registrarSe(usuario: Usuario){
     try{
-      const result = await this.afAuth.auth.createUserWithEmailAndPassword(usuario.email , usuario.senha);
-      console.log(result);
+      let result = await this.afAuth.auth.createUserWithEmailAndPassword(usuario.email , usuario.senha);
+      this.afAuth.authState.subscribe(res => {
+        if (res && res.uid) {
+          this.idCadastrado= res.uid;
+        } else {
+          this.idCadastrado = "erro";
+        }
+      });
       }catch(e){
       console.error(e);
       }
+
+      
     }
+    
   
 }

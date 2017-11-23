@@ -1,45 +1,47 @@
-<ion-header>
+<ion-content class="login-content" padding>
+    <div class="login-box">
+            <h1 class="login-title">Criar Nova Conta</h1>
+            <ion-row>
+                <ion-col>
+                    <ion-list inset>
+                        <h6 class="select-profile">Dados Pessoais:</h6>
+                        <ion-item>
+                            <ion-input type="text" placeholder="Nome" name="nome" [(ngModel)]="pessoa.nome" required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="number" placeholder="Matricula" name="matricula" [(ngModel)]="pessoa.matricula" required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="usuario.email" required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="password" placeholder="Senha" name="password" [(ngModel)]="usuario.senha" required></ion-input>
+                        </ion-item>
+                        
+                        <h6 class="select-profile"> Perfil: </h6>
+                        <ion-list radio-group [(ngModel)]="tipo" [ngModelOptions]="{standalone: true}">
+                                <ion-item>
+                                    <ion-label>Aluno</ion-label>
+                                    <ion-radio value="aluno"></ion-radio>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label>Professor</ion-label>
+                                    <ion-radio value="coordenador"></ion-radio>
+                                </ion-item>
+                        </ion-list>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button ion-button class="submit-btn" full type="submit" (click)="registrar()">Registrar</button>
+                </ion-col>
+            </ion-row>
 
-  
-</ion-header>>
-
-
-<ion-content padding>
-  <ion-card-header>
-    Registrar-se
-  </ion-card-header>
-  <ion-card-content>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-label floating>
-              Email
-            </ion-label>
-            <ion-input name="email" required [(ngModel)]="usuario.email"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label floating>
-                Senha
-              </ion-label>
-              <ion-input name="senha" required type="password" [(ngModel)]="usuario.senha"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col>
-            <button ion-button clear full (click)="registrar()">
-              Registrar
-            </button>
-          </ion-col>
-        </ion-row>
-    </ion-grid>
-  </ion-card-content>
-
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button ion-button class="submit-btn-cancel" full type="button" (click)="cancelar()">Cancelar</button>
+                </ion-col>
+            </ion-row>
+    </div>
 </ion-content>

@@ -1,0 +1,36 @@
+<ion-content class="login-content" padding>
+    <div class="login-box">
+        <h1 class="login-title">Cadastro de Aluno na Disciplina</h1>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Disciplina</ion-label>
+                    <ion-select [(ngModel)]="disciplina">
+                        <div *ngFor="let item of disciplinas | async">
+                            <div *ngIf="idProfessor == item.uidProfessor">
+                                <ion-option value="{{ item.key}}">{{item.nome }}</ion-option>
+                            </div>
+                        </div>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Aluno</ion-label>
+                    <ion-select [(ngModel)]="listaAluno" multiple="true">
+                        <ion-option *ngFor="let item of alunos | async" value="{{ item.key }}">{{item.pessoa.nome}}</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="signup-col">
+                <button ion-button class="submit-btn" full type="submit" (click)="adicionarAlunos()">Adicionar</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="signup-col">
+                <button ion-button class="submit-btn-cancel" full type="button" (click)="cancelar()">Cancelar</button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
